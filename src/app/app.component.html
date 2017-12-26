@@ -1,4 +1,22 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="over">
+    <mat-list>
+        <a routerLink="/popular" mat-list-item>Popular </a>
+        <a routerLink="/contacts" mat-list-item>Contacts </a>
+    </mat-list>
+  </mat-sidenav>
 
-<button mat-button>Click me!</button>
-<router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        {{title}}
+    </mat-toolbar>
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
 

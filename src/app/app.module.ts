@@ -4,7 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 
 // Material
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { 
+  MatButtonModule, 
+  MatCheckboxModule,
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule,
+  MatToolbarModule } from '@angular/material';
  
 // Components
 import { AppComponent } from './app.component';
@@ -40,11 +46,19 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule, 
     MatCheckboxModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
     MatButtonModule, 
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [ContactsService],
   bootstrap: [AppComponent]
