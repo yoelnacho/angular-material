@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 // Material
 import { 
@@ -10,6 +10,8 @@ import {
   MatSidenavModule,
   MatListModule,
   MatIconModule,
+  MatCardModule,
+  MatExpansionModule,
   MatToolbarModule } from '@angular/material';
  
 // Components
@@ -19,21 +21,7 @@ import { PopularComponent } from './popular/popular.component';
 
 // Services
 import { ContactsService } from './contacts.service';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: PopularComponent
-  },
-  {
-    path: 'contacts',
-    component: ContactsComponent
-  },
-  {
-    path: 'popular',
-    component: PopularComponent
-  }
-];
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -50,7 +38,9 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    RouterModule.forRoot(routes)
+    MatCardModule,
+    MatExpansionModule,
+    AppRoutingModule
   ],
   exports: [
     MatButtonModule, 
@@ -58,6 +48,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatListModule,
     MatIconModule,
+    MatCardModule,
+    MatExpansionModule,
     MatSidenavModule
   ],
   providers: [ContactsService],

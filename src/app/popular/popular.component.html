@@ -1,3 +1,14 @@
-<p>
-  popular works!
-</p>
+<h3>Polular Contacts</h3>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let contact of contacts">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+         {{contact.name}}
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+     {{contact.number}}
+  </mat-expansion-panel>
+</mat-accordion>
+
